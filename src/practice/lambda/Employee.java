@@ -10,4 +10,12 @@ public class Employee {
         this.experience=experience;
     }
 
+    @Override
+    public String toString() {
+        return "Employee[" +
+                "ename='" + ename + '\'' +
+                ", salary=" + salary +
+                ", experience=" + experience +
+                ']';
+    }
 }

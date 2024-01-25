@@ -2,6 +2,7 @@ import practice.lambda.Employee;
 import practice.lambda.Printsumation;
 
 import java.util.ArrayList;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Main {
@@ -11,8 +12,7 @@ public class Main {
             return x + y;
         };
         System.out.println("Sum of two number: " + sf.printSum(34, 56));
-
-
+        
         //EXAMPLE OF CONSUMER INTERFACE  WHO TAKE ONLY ONE PARAMETER AND RETURN TYPE IS VOID.
 
         ArrayList<Integer> list = new ArrayList();
@@ -35,11 +35,23 @@ public class Main {
 
 
         //USING PREDICATE FUNTIONAL INTERFACE RETURN TYPE-BOOLEAN AND TAKING ONLY ONE ARGUMENT OR PARAMETER
-        Predicate<Employee> predicate = emp1 -> (emp1.salary > 50000) && (emp1.experience >2);
+        Predicate<Employee> predicate = emp1 -> (emp1.salary > 10000) && (emp1.experience >2);
         for(Employee emp:list1) {
             if (predicate.test(emp)) {
-                System.out.println(emp.ename);
+                System.out.println(emp.toString());
+
             }
+        }
+         //Funtion Functional interface
+        //Example-1 print square of a number
+        Function <Integer,Integer> square=n->n*n;
+        System.out.println("Square is : " +square.apply(12));//144
+
+        //Example-2 print Square of all array element
+        int []arr ={12,4,20,45};
+        Function<Integer,Integer> sqrOfArrayElement=s->s*s;
+        for(int a:arr){
+            System.out.println("Square of "+a+" is: "+sqrOfArrayElement.apply(a));
         }
     }
 }
