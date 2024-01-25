@@ -42,16 +42,24 @@ public class Main {
 
             }
         }
+
+
          //Funtion Functional interface
         //Example-1 print square of a number
+
+
         Function <Integer,Integer> square=n->n*n;
         System.out.println("Square is : " +square.apply(12));//144
 
         //Example-2 print Square of all array element
+
         int []arr ={12,4,20,45};
         Function<Integer,Integer> sqrOfArrayElement=s->s*s;
         for(int a:arr){
             System.out.println("Square of "+a+" is: "+sqrOfArrayElement.apply(a));
         }
+        //Example-03 Length of String using Function functional Interface
+        Function<String, Integer>fn=str->str.length();
+        System.out.println("Length of  Given String: "+fn.apply("Aditya Kumar Suman"));
     }
 }
